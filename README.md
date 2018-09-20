@@ -1,7 +1,7 @@
 ### RSR_projects
 
 ### Requirements
-'pipenv' installed and in PATH
+`pipenv` installed and in PATH
 
 ### Usage
 
