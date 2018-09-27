@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    steps:
+      - checkout
+      - run: make env
+      - run: make html
+      - store_artifacts:
+          path: dist
+          destination: RSR_projects
