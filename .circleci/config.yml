@@ -1,10 +1,20 @@
 version: 2
 jobs:
   build:
+    docker:
+      - image: circleci/python:3.7.0
     steps:
       - checkout
-      - run: make env
-      - run: make html
+      - run:
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+      - run:
+          command: |
+            . venv/bin/activate
+            jupyter-nbconvert sample_k_neighbors.ipynb
+            mkdir -p reports
       - store_artifacts:
-          path: dist
+          path: reports/
           destination: RSR_projects
