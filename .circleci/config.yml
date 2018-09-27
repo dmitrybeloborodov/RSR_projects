@@ -15,6 +15,7 @@ jobs:
             . venv/bin/activate
             jupyter-nbconvert sample_k_neighbors.ipynb
             mkdir -p reports
+            mv sample_k_neighbors.html reports/
       - store_artifacts:
           path: reports/
           destination: RSR_projects
