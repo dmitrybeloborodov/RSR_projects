@@ -2,16 +2,18 @@ oversion: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.7.0
+      - image: circleci/python:3.6.6
     steps:
       - checkout
       - run:
           command: |
-            pipenv install -r requirements.txt --skip-lock
-            pipenv lock --pre --clear
+            python3 -m virtualenv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
       - run:
           command: |
-            pipenv run jupyter nbconvert --execute sample_k_neighbors.ipynb
+            . venv/bin/activate
+            jupyter-nbconvert --execute sample_k_neighbors.ipynb
             mkdir -p reports
             mv sample_k_neighbors.html reports/
       - store_artifacts:
