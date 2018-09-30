@@ -7,7 +7,8 @@ jobs:
       - checkout
       - run:
           command: |
-            pipenv install -r requirements.txt
+            pipenv install -r requirements.txt --skip-lock
+            pipenv lock --pre --clear
       - run:
           command: |
             pipenv run jupyter nbconvert --execute sample_k_neighbors.ipynb
