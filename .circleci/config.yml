@@ -7,13 +7,10 @@ jobs:
       - checkout
       - run:
           command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install -r requirements.txt
+            pipenv install -r requirements.txt
       - run:
           command: |
-            . venv/bin/activate
-            jupyter-nbconvert --execute sample_k_neighbors.ipynb
+            pipenv run jupyter nbconvert --execute sample_k_neighbors.ipynb
             mkdir -p reports
             mv sample_k_neighbors.html reports/
       - store_artifacts:
