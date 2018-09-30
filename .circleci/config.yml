@@ -13,7 +13,7 @@ jobs:
       - run:
           command: |
             . venv/bin/activate
-            jupyter-nbconvert sample_k_neighbors.ipynb
+            jupyter-nbconvert --execute sample_k_neighbors.ipynb
             mkdir -p reports
             mv sample_k_neighbors.html reports/
       - store_artifacts:
