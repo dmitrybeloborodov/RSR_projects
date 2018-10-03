@@ -1,6 +1,7 @@
 ### RSR_projects
 
 [![CircleCI](https://circleci.com/gh/dmitrybeloborodov/RSR_projects.svg?style=svg)](https://circleci.com/gh/dmitrybeloborodov/RSR_projects)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/dmitrybeloborodov/RSR_projects/master)
 
 ### Requirements
 `pipenv` or `conda` installed
