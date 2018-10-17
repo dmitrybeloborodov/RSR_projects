@@ -15,8 +15,8 @@ jobs:
             . venv/bin/activate
          #   export KAGGLE_USERNAME
          #   export KAGGLE_KEY
-            mkdir -p .kaggle
-            cd .kaggle
+            mkdir .kaggle/
+            cd .kaggle/
             echo "{"username":\"${KAGGLE_USERNAME}\","key":\"${KAGGLE_KEY}\}" > kaggle.json
             cd ..
             kaggle competitions download titanic
