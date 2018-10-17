@@ -6,11 +6,13 @@ jobs:
     steps:
       - checkout
       - run:
+          name: initializing environment
           command: |
             python3 -m virtualenv venv
             . venv/bin/activate
             pip install -r requirements.txt
       - run:
+          name: executing code and submitting
           command: |
             . venv/bin/activate
             mkdir .kaggle
