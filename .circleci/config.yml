@@ -24,7 +24,6 @@ jobs:
             kaggle competitions submit titanic -f submission.csv -m "My submission"
             mkdir reports
             mv titanic_ml.html reports/
-            mv submission.csv reports/
       - store_artifacts:
           path: reports/
           destination: reports/
