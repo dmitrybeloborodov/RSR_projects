@@ -13,9 +13,15 @@ jobs:
       - run:
           command: |
             . venv/bin/activate
-            jupyter-nbconvert --execute sample_k_neighbors.ipynb
-            mkdir -p reports
-            mv sample_k_neighbors.html reports/
-      - store_artifacts:
-          path: reports/
-          destination: reports/
+         #   export KAGGLE_USERNAME
+         #   export KAGGLE_KEY
+            mkdir -p .kaggle
+            cd .kaggle
+            echo "{"username":\"${KAGGLE_USERNAME}\","key":\"${KAGGLE_KEY}\}" > kaggle.json
+            cd ..
+            kaggle competitions download titanic
+            jupyter-nbconvert --execute titanic_ml.ipynb
+            kaggle competitions submit titanic -f submission.csv -m "My submission"
+      #- store_artifacts:
+      #    path: reports/
+      #    destination: reports/
