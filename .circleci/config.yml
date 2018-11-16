@@ -22,7 +22,8 @@ jobs:
             kaggle competitions download titanic
             jupyter-nbconvert --execute titanic_ml.ipynb
             kaggle competitions submit titanic -f submission.csv -m "My submission"            
-            osf -p t53z4 upload -f submission.csv submission.csv
+            osf -p x783r upload -f submission.csv osfstorage/Beloborodov/submission.csv
+            osf -p x783r upload -f titanic_ml.html osfstorage/Beloborodov/titanic.html
             mkdir reports
             mv titanic_ml.html reports/
       - store_artifacts:
